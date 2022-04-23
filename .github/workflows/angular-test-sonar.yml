@@ -12,5 +12,4 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm run-script build-prod
-        
+      - run: npm run-script build-prod  # package.json -> "scripts"
