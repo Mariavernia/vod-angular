@@ -1,0 +1,4 @@
+input::-webkit-input-placeholder {
+  color: black; /*Change the placeholder color*/
+  opacity: 0.3; /*Change the opacity between 0 and 1*/
+}
