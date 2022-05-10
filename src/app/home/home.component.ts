@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {RegisterDialogComponent} from "../users/register-dialog.component";
+import {LoginDialogComponent} from "../users/login-dialog.component";
 
 @Component({
   selector: 'app-home',
@@ -18,5 +19,9 @@ export class HomeComponent implements OnInit {
 
   register(): void {
    this.dialog.open(RegisterDialogComponent)
+  }
+
+  login(): void {
+    this.dialog.open(LoginDialogComponent)
   }
 }
