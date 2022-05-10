@@ -10,13 +10,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {FormsModule} from "@angular/forms";
+import {LoginDialogComponent} from "./users/login-dialog.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegisterDialogComponent
+    RegisterDialogComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
