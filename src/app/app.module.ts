@@ -11,14 +11,16 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {FormsModule} from "@angular/forms";
 import {LoginDialogComponent} from "./users/login-dialog.component";
-
+import {MainPageComponent} from "./subject/main-page.component";
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegisterDialogComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import {LoginDialogComponent} from "./users/login-dialog.component";
     MDBBootstrapModule.forRoot(),
     FontAwesomeModule,
     FormsModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

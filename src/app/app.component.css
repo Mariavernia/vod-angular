@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+nav {
+  background-color: #2c2c54;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+}
+
+nav li a {
+  color: #f7f1e3;
+}
+
+.nav-item>a:hover {
+  color: #ff793f;
+}
+
+.navbar-nav > .active > a {
+  color: #ff793f;
+
+}
+
+section {
+  background: linear-gradient(180deg, rgba(44,44,84,1) 0%, rgba(64,64,122,1) 100%);
+}

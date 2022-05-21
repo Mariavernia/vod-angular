@@ -1,4 +1,26 @@
+html{}
+mdb-card {
+  background-color: #f7f1e3;
+}
 input::-webkit-input-placeholder {
   color: black; /*Change the placeholder color*/
   opacity: 0.3; /*Change the opacity between 0 and 1*/
+  font-family: 'Urbanist', sans-serif;
 }
+
+button {
+  background-color: #706fd3;
+  color: #f7f1e3;
+  font-family: 'Urbanist', sans-serif;
+}
+
+p {
+  color: #2c2c54;
+  font-family: 'Urbanist', sans-serif;
+}
+
+label {
+  color: #2c2c54;
+  font-family: 'Urbanist', sans-serif;
+}
+
