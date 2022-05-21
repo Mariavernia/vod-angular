@@ -1,14 +1,9 @@
 // This file can be replaced during build by using the `fileReplacements` array.
+// `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-
 export const environment = {
-  production: false,
-  NAME: 'tfm-angular',
-  VERSION: '0.0.0',
-  REST_USER: 'http://localhost:8081',
-  REST_CORE: 'http://localhost:8082',
-  REST_CUSTOMER_SUPPORT: 'http://localhost:8083'
+  production: false
 };
 
 /*
