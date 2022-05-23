@@ -13,6 +13,8 @@ import {FormsModule} from "@angular/forms";
 import {LoginDialogComponent} from "./users/login-dialog.component";
 import {MainPageComponent} from "./subject/main-page.component";
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import {MatCardModule} from "@angular/material/card";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     FontAwesomeModule,
     FormsModule,
     ScrollingModule,
+    MatCardModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
