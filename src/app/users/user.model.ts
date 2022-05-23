@@ -5,6 +5,5 @@ export interface User {
   familyName: string;
   email: string;
   password: string;
-  name: string;
   role?: Role;
 }
