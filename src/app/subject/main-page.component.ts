@@ -8,7 +8,4 @@ import {Subject} from "./subject.model";
 })
 export class MainPageComponent {
 
-  @Input() tittle = 'titulo';
-  @Input() autor = 'Nombre Apellido'
-
 }
