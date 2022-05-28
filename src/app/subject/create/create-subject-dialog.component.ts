@@ -1,14 +1,11 @@
 import {Component, Inject} from "@angular/core";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Subject} from "./subject.model";
-import {FormBuilder} from "@angular/forms";
-import {reference} from "@popperjs/core";
-import {SubjectService} from "./subject.service";
+import {Subject} from "../subject.model";
+import {SubjectService} from "../subject.service";
 
 @Component({
-
   templateUrl: 'create-subject-dialog.component.html',
-  styleUrls: ['../share/dialog.component.css']
+  styleUrls: ['../../share/dialog.component.css']
 })
 export class CreateSubjectDialogComponent {
 

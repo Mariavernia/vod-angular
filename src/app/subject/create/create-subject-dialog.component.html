@@ -4,6 +4,7 @@
       <p class="h4 text-center py-4">New subject</p>
 
       <div class="md-form">
+        <label class="font-weight-light">Reference</label>
         <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
         <input
           type="text"
@@ -13,10 +14,10 @@
           name = "reference"
           [(ngModel)]="data.reference"
         />
-        <label class="font-weight-light">Reference</label>
       </div>
 
       <div class="md-form">
+        <label class="font-weight-light">Name</label>
         <input
           type="text"
           id="name"
@@ -25,11 +26,11 @@
           name = "name"
           [(ngModel)]="data.name"
         />
-        <label class="font-weight-light">Name</label>
       </div>
 
       <div class="md-form">
         <mdb-icon fas icon="exclamation-triangle" class="prefix grey-text"></mdb-icon>
+        <label class="font-weight-light">Description</label>
         <input
           type="text"
           id="description"
@@ -38,11 +39,11 @@
           name = "description"
           [(ngModel)]="data.description"
         />
-        <label class="font-weight-light">Description</label>
       </div>
 
       <div class="md-form">
         <mdb-icon icon="lock" class="prefix grey-text"></mdb-icon>
+        <label class="font-weight-light">Authors</label>
         <input
           type="text"
           id="author"
@@ -70,7 +71,6 @@
           placeholder="Author 3"
           [(ngModel)]="author2"
         />
-        <label class="font-weight-light">Authors</label>
       </div>
 
       <div class="text-center py-4 mt-3">

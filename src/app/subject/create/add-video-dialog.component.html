@@ -1,0 +1,61 @@
+<mdb-card>
+  <mdb-card-body>
+    <form (ngSubmit)="onSubmit()">
+      <p class="h4 text-center py-4">New video</p>
+
+      <div class="md-form">
+        <label class="font-weight-light">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          mdbInput
+          name = "name"
+          [(ngModel)]="data.name"
+        />
+      </div>
+      <div class="md-form">
+        <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+        <label class="font-weight-light">Reference</label>
+        <input
+          type="text"
+          id="description"
+          class="form-control"
+          mdbInput
+          name = "reference"
+          [(ngModel)]="data.description"
+        />
+      </div>
+      <div class="md-form">
+        <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+        <label class="font-weight-light">Reference</label>
+        <input
+          type="text"
+          id="link"
+          class="form-control"
+          mdbInput
+          name = "reference"
+          [(ngModel)]="data.link"
+        />
+      </div>
+
+      <div class="md-form">
+        <mdb-icon fas icon="exclamation-triangle" class="prefix grey-text"></mdb-icon>
+        <label class="font-weight-light">Subject Reference</label>
+        <br/>
+        <mat-form-field appearance="fill">
+          <mat-label>Subject reference</mat-label>
+          <mat-select>
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let reference of seasonReferences" [value]="data.seasonReference">{{reference}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="text-center py-4 mt-3">
+        <button mdbBtn class="button waves-light" type="submit" mdbWavesEffect>
+          Create
+        </button>
+      </div>
+    </form>
+  </mdb-card-body>
+</mdb-card>

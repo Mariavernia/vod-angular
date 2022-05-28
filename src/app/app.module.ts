@@ -11,11 +11,11 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginDialogComponent} from "./users/login-dialog.component";
-import {SubjectPageComponent} from "./subject/subject-page.component";
+import {SubjectCaseComponent} from "./subject/subject-case.component";
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCardModule} from "@angular/material/card";
 import {MatTableModule} from "@angular/material/table";
-import {CreateSubjectDialogComponent} from "./subject/create-subject-dialog.component";
+import {CreateSubjectDialogComponent} from "./subject/create/create-subject-dialog.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
@@ -26,14 +26,21 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MessageService} from "./core/message.service";
 import {HttpErrorHandler} from "./core/http-error-handler.service";
+import {SubjectPageComponent} from "./subject/subject-page.component";
+import {CreateSeasonDialogComponent} from "./subject/create/create-season-dialog.component";
+import {AddVideoDialogComponent} from "./subject/create/add-video-dialog.component";
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
+    AddVideoDialogComponent,
     AppComponent,
+    CreateSeasonDialogComponent,
     CreateSubjectDialogComponent,
     HomeComponent,
-    RegisterDialogComponent,
     LoginDialogComponent,
+    RegisterDialogComponent,
+    SubjectCaseComponent,
     SubjectPageComponent,
   ],
   imports: [
@@ -52,7 +59,8 @@ import {HttpErrorHandler} from "./core/http-error-handler.service";
     MatButtonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule,
   ],
   providers: [
     SubjectService,

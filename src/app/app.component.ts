@@ -2,7 +2,9 @@ import {AfterViewInit, Component, ElementRef} from '@angular/core';
 import {RegisterDialogComponent} from "./users/register-dialog.component";
 import {LoginDialogComponent} from "./users/login-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
-import {CreateSubjectDialogComponent} from "./subject/create-subject-dialog.component";
+import {CreateSubjectDialogComponent} from "./subject/create/create-subject-dialog.component";
+import {CreateSeasonDialogComponent} from "./subject/create/create-season-dialog.component";
+import {AddVideoDialogComponent} from "./subject/create/add-video-dialog.component";
 
 @Component({
   selector: 'app-root',
@@ -30,6 +32,18 @@ export class AppComponent implements AfterViewInit{
   createNewSubject() {
     this.dialog.open(CreateSubjectDialogComponent, {
       data: {reference: " ",name: " ",description: " ",authorList: [" "," "," "]}
+    })
+  }
+
+  createNewSeason() {
+    this.dialog.open(CreateSeasonDialogComponent, {
+      data: {reference: " ", name: " ", subjectReference: " "}
+    })
+  }
+
+  addNewVideo() {
+    this.dialog.open(AddVideoDialogComponent, {
+      data: {name: " ", description: " ", link: " ", seasonReference: " "}
     })
   }
 }
