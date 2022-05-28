@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {Subject} from "../subject/subject.model";
-import {Season} from "../subject/season.model";
-import {Video} from "../subject/video.model";
-import {User} from "../users/user.model";
-import {Role} from "../users/role.model";
+import {SubjectService} from "../subject/subject.service";
+import {of} from "rxjs";
+
 
 @Component({
   selector: 'app-home',
@@ -12,9 +11,13 @@ import {Role} from "../users/role.model";
 })
 export class HomeComponent implements OnInit {
 
+  // @ts-ignore
+  subject: Subject;
   subjectList: Subject[] = [];
+  subjects = of([]);
+  numberOfSubjects: number = 0;
 
-  constructor() {
+  constructor(private elementRef:ElementRef, private subjectService:SubjectService) {
     this.subjectList = [];
   }
 
@@ -22,55 +25,16 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.subjectList = [];
     this.synchronizeSubjects();
+    var d1 = this.elementRef.nativeElement.querySelector('.one');
+    d1.insertAdjacentHTML('beforeend',"<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/2HevdEu3EMM\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>");
+
   }
 
   synchronizeSubjects(): void {
-    let video1: Video = {
-      id: "jhwey", name: "video 1", description: "descr 1"
-    };
-
-    let season1: Season = {
-      id: "a2w",
-      name: "2016-2017",
-      videoList: [video1]
-    };
-    let author1: User = {
-      familyName: "apellido 1",
-      firstName: "Autor 1",
-      password: "wfqf",
-      email: "autor1@gmail.com",
-      role: Role.PROFESSOR
-    };
-    let author2: User = {
-      familyName: "apellido 3",
-      firstName: "Autor 1",
-      password: "wfqf",
-      email: "autor1@gmail.com",
-      role: Role.PROFESSOR
-    };
-    let author3: User = {
-      familyName: "apellido 2",
-      firstName: "Autor 2",
-      password: "wfqf",
-      email: "autor1@gmail.com",
-      role: Role.PROFESSOR
-    };
-    let subject1: Subject = {
-      id: "234",
-      name: "subject 1",
-      description: "descripcion",
-      seasonsList: [season1],
-      authorList: [author1, author2, author3]
-    };
-    let subject2: Subject = {
-      id: "234",
-      name: "subject 2",
-      description: "descripcion 2",
-      seasonsList: [season1],
-      authorList: [author1, author2]
-    };
-    this.subjectList = [subject1, subject2, subject1, subject1, subject1];
+    // @ts-ignore
+    this.subjects = this.subjectService.searchAll();
   }
+
 
 
 

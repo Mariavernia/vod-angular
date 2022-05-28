@@ -2,6 +2,7 @@ import {AfterViewInit, Component, ElementRef} from '@angular/core';
 import {RegisterDialogComponent} from "./users/register-dialog.component";
 import {LoginDialogComponent} from "./users/login-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {CreateSubjectDialogComponent} from "./subject/create-subject-dialog.component";
 
 @Component({
   selector: 'app-root',
@@ -24,5 +25,11 @@ export class AppComponent implements AfterViewInit{
 
   login(): void {
     this.dialog.open(LoginDialogComponent)
+  }
+
+  createNewSubject() {
+    this.dialog.open(CreateSubjectDialogComponent, {
+      data: {reference: " ",name: " ",description: " ",authorList: [" "," "," "]}
+    })
   }
 }

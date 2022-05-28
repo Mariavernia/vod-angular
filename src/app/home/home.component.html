@@ -1,38 +1,10 @@
 
 <link rel="stylesheet" href="https://unpkg.com/primeflex@3.1.2/primeflex.css">
 <h1> Asignaturas </h1>
-<div class="grid">
-  <div *ngFor="let subject of subjectList" >
-    <div class="">
-      <div class="p-3 h-full">
-        <div class="shadow-2 p-3 h-full flex flex-column subject">
-          <div class="text-xl mb-2" id="subjectTittle">
-            {{subject.name}}
-          </div>
-          <hr style="color: #2c2c54"/>
-          <div class="flex align-items-center">
-            <div *ngFor="let author of subject.authorList" id="subjectAuthor">
-              <div >
-                {{author.firstName}} {{author.familyName}}; &nbsp;
-              </div>
-            </div>
-          </div>
-          <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
-          <ul class="list-none p-0 m-0 flex-grow-1">
-            <li class="flex align-items-center mb-3">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span id="subjectDescription">{{subject.description}}</span>
-            </li>
-          </ul>
-          <button mdbBtn type="submit" > Entrar </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<subject-page [data]="subjects"></subject-page>
 <h1> Canal UPM </h1>
-
 
 <h1> Otros videos de interes</h1>
 
+<div class="one" #one></div>
 
