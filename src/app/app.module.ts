@@ -9,20 +9,32 @@ import { RegisterDialogComponent } from "./users/register-dialog.component";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginDialogComponent} from "./users/login-dialog.component";
-import {MainPageComponent} from "./subject/main-page.component";
+import {SubjectPageComponent} from "./subject/subject-page.component";
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatCardModule} from "@angular/material/card";
 import {MatTableModule} from "@angular/material/table";
+import {CreateSubjectDialogComponent} from "./subject/create-subject-dialog.component";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {SubjectService} from "./subject/subject.service";
+import {HomeService} from "./home/home.service";
+import {HttpService} from "./core/http.service";
+import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MessageService} from "./core/message.service";
+import {HttpErrorHandler} from "./core/http-error-handler.service";
 
 @NgModule({
   declarations: [
     AppComponent,
+    CreateSubjectDialogComponent,
     HomeComponent,
     RegisterDialogComponent,
     LoginDialogComponent,
-    MainPageComponent,
+    SubjectPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +47,20 @@ import {MatTableModule} from "@angular/material/table";
     ScrollingModule,
     MatCardModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    SubjectService,
+    HomeService,
+    HttpService,
+    MessageService,
+    HttpErrorHandler,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

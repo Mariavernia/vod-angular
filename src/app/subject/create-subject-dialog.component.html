@@ -1,0 +1,83 @@
+<mdb-card>
+  <mdb-card-body>
+    <form (ngSubmit)="onSubmit()">
+      <p class="h4 text-center py-4">New subject</p>
+
+      <div class="md-form">
+        <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+        <input
+          type="text"
+          id="reference"
+          class="form-control"
+          mdbInput
+          name = "reference"
+          [(ngModel)]="data.reference"
+        />
+        <label class="font-weight-light">Reference</label>
+      </div>
+
+      <div class="md-form">
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          mdbInput
+          name = "name"
+          [(ngModel)]="data.name"
+        />
+        <label class="font-weight-light">Name</label>
+      </div>
+
+      <div class="md-form">
+        <mdb-icon fas icon="exclamation-triangle" class="prefix grey-text"></mdb-icon>
+        <input
+          type="text"
+          id="description"
+          class="form-control"
+          mdbInput
+          name = "description"
+          [(ngModel)]="data.description"
+        />
+        <label class="font-weight-light">Description</label>
+      </div>
+
+      <div class="md-form">
+        <mdb-icon icon="lock" class="prefix grey-text"></mdb-icon>
+        <input
+          type="text"
+          id="author"
+          class="form-control"
+          mdbInput
+          name = "author"
+          placeholder="Author 1"
+          [(ngModel)]="author0"
+        />
+        <input
+          type="text"
+          id="author2"
+          class="form-control"
+          mdbInput
+          name = "author"
+          placeholder="Author 2"
+          [(ngModel)]="author1"
+        />
+        <input
+          type="text"
+          id="author3"
+          class="form-control"
+          mdbInput
+          name = "author"
+          placeholder="Author 3"
+          [(ngModel)]="author2"
+        />
+        <label class="font-weight-light">Authors</label>
+      </div>
+
+      <div class="text-center py-4 mt-3">
+        <button mdbBtn class="button waves-light" type="submit" mdbWavesEffect>
+          Create
+        </button>
+      </div>
+    </form>
+  </mdb-card-body>
+</mdb-card>

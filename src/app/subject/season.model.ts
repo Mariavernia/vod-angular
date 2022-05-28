@@ -1,7 +1,8 @@
-import {Video} from "./video.model";
+import {Subject} from "./subject.model";
 
 export interface Season {
-  id: string;
+  reference: string;
   name: string;
-  videoList: Video[];
+  subject: Subject;
+
 }
