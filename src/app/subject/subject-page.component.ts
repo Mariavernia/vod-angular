@@ -1,6 +1,4 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {Subject} from "./subject.model";
-import {Observable} from "rxjs";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'subject-page',
@@ -9,13 +7,4 @@ import {Observable} from "rxjs";
 })
 export class SubjectPageComponent {
 
-  // @ts-ignore
-  subjectList: Subject[] = [];
-
-  @Input()
-  set data(data: Observable<any>) {
-    data.subscribe(dataValue =>{
-      this.subjectList = dataValue;
-    })
-  }
 }
