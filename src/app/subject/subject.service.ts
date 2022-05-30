@@ -1,12 +1,11 @@
 import {HttpService} from "../core/http.service";
-import {Observable, of, throwError as observableThrowError} from "rxjs";
+import {Observable, of} from "rxjs";
 import {Subject} from "./subject.model";
 import {Injectable} from "@angular/core";
 import {EndPoints} from "../share/end-points";
-import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {HandleError, HttpErrorHandler} from "../core/http-error-handler.service";
-import {Video} from "./video.model";
 import {Season} from "./season.model";
 
 const httpOptions = {
@@ -24,7 +23,7 @@ export class SubjectService {
   static SEARCH = "/search";
   static SEASON = "/season";
   static VIDEOS = "/videos";
-  static REFERENCES = "/references";
+  static REFERENCE = "/reference";
 
   private handleError: HandleError;
 
@@ -50,15 +49,11 @@ export class SubjectService {
   }
 
   getAllSubjectsReferences(): Observable<String[]> {
-    /*return this.httpService
-      .get(EndPoints.SUBJECT + SubjectService.REFERENCES);*/
-    return of(["613000095", "613000096"]);
+    return this.httpService
+      .get(EndPoints.SUBJECT + SubjectService.REFERENCE);
+    //return of(["613000095", "613000096"]);
   }
 
-  getAllSeasonReferences() : Observable<String[]> {
-    /*return this.httpService
-      .get(EndPoints.SUBJECT + SubjectService.REFERENCES);*/
-    return of(["613000095", "613000096"]);
-  }
+
 
 }

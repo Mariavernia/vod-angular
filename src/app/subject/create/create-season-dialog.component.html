@@ -34,12 +34,13 @@
         <br/>
         <mat-form-field appearance="fill">
           <mat-label>Subject reference</mat-label>
-          <mat-select>
-            <mat-option>None</mat-option>
-            <mat-option *ngFor="let reference of subjectReferences" [value]="data.subjectReference">{{reference}}</mat-option>
+          <mat-select [formControl]="subjectControl" required>
+            <mat-option *ngFor="let reference of subjectReferences" [value]="reference">{{reference}}</mat-option>
           </mat-select>
+          <mat-error *ngIf="subjectControl.hasError('required')">Please choose a subject</mat-error>
         </mat-form-field>
       </div>
+
       <div class="text-center py-4 mt-3">
         <button mdbBtn class="button waves-light" type="submit" mdbWavesEffect>
           Create

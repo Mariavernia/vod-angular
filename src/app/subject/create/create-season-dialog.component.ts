@@ -1,9 +1,10 @@
 import {Component, Inject, OnInit} from "@angular/core";
 import {Season} from "../season.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Subject} from "../subject.model";
 import {SubjectService} from "../subject.service";
-import {of} from "rxjs";
+import {SeasonService} from "../season.service";
+import {Observable, of} from "rxjs";
+import {FormControl} from "@angular/forms";
 
 @Component({
   templateUrl: 'create-season-dialog.component.html',
@@ -12,10 +13,14 @@ import {of} from "rxjs";
 export class CreateSeasonDialogComponent implements OnInit{
 
   seasons: Season[] = [];
+  // @ts-ignore
+  subjectReferenceList: Observable<String[]>;
   subjectReferences: String[]= [];
 
+  subjectControl = new FormControl();
+
   constructor(@Inject(MAT_DIALOG_DATA) public data:Season, private subjectService:SubjectService,
-              public dialogRef: MatDialogRef<CreateSeasonDialogComponent>) {
+              public dialogRef: MatDialogRef<CreateSeasonDialogComponent>, private seasonService:SeasonService) {
   }
 
   ngOnInit(): void {
@@ -24,15 +29,19 @@ export class CreateSeasonDialogComponent implements OnInit{
 
   onSubmit() {
     this.dialogRef.close();
-
+    this.data.subjectReference = this.subjectControl.value;
+    this.seasonService.create(this.data)
+      .subscribe(season => this.seasons.push(season));
   }
 
   getAllSubjectReferences() {
-    // @ts-ignore
-    this.subjectService.getAllSubjectsReferences()
+    this.subjectReferenceList = this.subjectService.getAllSubjectsReferences();
+    this.subjectReferenceList
       .subscribe(dataValue => {
-        this.subjectReferences = dataValue;
-      })
+        for(let data of dataValue){
+          this.subjectReferences = data.toString().split(",");
+        }
+      });
   }
 
 

@@ -3,6 +3,7 @@ import {Video} from "../video.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Season} from "../season.model";
 import {SubjectService} from "../subject.service";
+import {SeasonService} from "../season.service";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class AddVideoDialogComponent implements OnInit{
   videos: Video[] = [];
   seasonReferences: String[]= [];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data:Video, private subjectService:SubjectService,
+  constructor(@Inject(MAT_DIALOG_DATA) public data:Video, private seasonService:SeasonService,
               public dialogRef: MatDialogRef<AddVideoDialogComponent>) {
   }
 
@@ -24,7 +25,7 @@ export class AddVideoDialogComponent implements OnInit{
 
   getAllSeasonReferences() {
     // @ts-ignore
-    this.subjectService.getAllSeasonReferences()
+    this.seasonService.getAllSeasonReferences()
       .subscribe(dataValue => {
         this.seasonReferences = dataValue;
       })
