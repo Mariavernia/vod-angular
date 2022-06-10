@@ -29,7 +29,6 @@ import {CreateSeasonDialogComponent} from "./home/subject/create/create-season-d
 import {AddVideoDialogComponent} from "./home/subject/create/add-video-dialog.component";
 import {MatSelectModule} from '@angular/material/select';
 import {SubjectPageComponent} from "./home/subject/subject-page.component";
-import {MainComponent} from "./home/main/main.component";
 import {SeasonPageComponent} from "./home/subject/season/season-page.component";
 import {SubjectService} from "./home/subject/subject.service";
 import {VideoService} from "./home/subject/video/video.service";
@@ -47,7 +46,6 @@ import {SafePipe} from "./home/subject/safe.pipe";
     LoginDialogComponent,
     RegisterDialogComponent,
     HomeComponent,
-    MainComponent,
     SubjectCaseComponent,
     SeasonPageComponent,
     SubjectPageComponent,
