@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+div .subject {
+  border-radius: 6px;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+  color: #f7f1e3;
+  word-wrap: inherit;
+}
+div .name {
+  width: 500px;
+  text-align: center;
+}
+div .description {
+  align-items: center;
+  width: 400px;
+  font-size: medium;
+  text-align: center;
+  color: #aaa69d;
+}

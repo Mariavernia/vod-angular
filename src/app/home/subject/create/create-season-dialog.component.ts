@@ -1,14 +1,14 @@
 import {Component, Inject, OnInit} from "@angular/core";
-import {Season} from "../season.model";
+import {Season} from "../models/season.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {SubjectService} from "../subject.service";
-import {SeasonService} from "../season.service";
+import {SeasonService} from "../season/season.service";
 import {Observable, of} from "rxjs";
 import {FormControl} from "@angular/forms";
 
 @Component({
   templateUrl: 'create-season-dialog.component.html',
-  styleUrls: ['../../share/dialog.component.css']
+  styleUrls: ['../../../share/dialog.component.css']
 })
 export class CreateSeasonDialogComponent implements OnInit{
 

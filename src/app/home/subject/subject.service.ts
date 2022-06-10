@@ -1,12 +1,12 @@
-import {HttpService} from "../core/http.service";
+import {HttpService} from "../../core/http.service";
 import {Observable, of} from "rxjs";
-import {Subject} from "./subject.model";
+import {Subject} from "./models/subject.model";
 import {Injectable} from "@angular/core";
-import {EndPoints} from "../share/end-points";
+import {EndPoints} from "../../share/end-points";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
-import {HandleError, HttpErrorHandler} from "../core/http-error-handler.service";
-import {Season} from "./season.model";
+import {HandleError, HttpErrorHandler} from "../../core/http-error-handler.service";
+import {Season} from "./models/season.model";
 
 const httpOptions = {
   headers: new HttpHeaders({

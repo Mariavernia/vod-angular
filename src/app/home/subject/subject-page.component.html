@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<!--
+<div>
+  <mat-form-field appearance="fill">
+    <mat-label>Subject reference</mat-label>
+    <mat-select [formControl]="subjectControl" [(ngModel)]="selectedSubject" required>
+      <mat-option *ngFor="let season of seasonsList" [value]="season">{{season.name}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="subjectControl.hasError('required')">Please choose a subject</mat-error>
+  </mat-form-field>
+</div>
+-->
+
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <a mat-tab-link *ngFor="let season of seasonsList"
+     (click)="activeSeason = season"
+     [active]="activeSeason == season"> {{season.name}} </a>
+
+</nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+<br>
+
+<season-page [data]="activeSeason" ></season-page>
+
+
+

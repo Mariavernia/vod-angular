@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {Subject} from "./subject.model";
+import {Subject} from "./models/subject.model";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
+import {SubjectPageComponent} from "./subject-page.component";
 
 @Component({
   selector: 'subject-case',
@@ -12,6 +14,10 @@ export class SubjectCaseComponent {
   // @ts-ignore
   subjectList: Subject[] = [];
 
+
+  constructor(private router: Router) {
+  }
+
   @Input()
   set data(data: Observable<any>) {
     data.subscribe(dataValue =>{
@@ -19,7 +25,9 @@ export class SubjectCaseComponent {
     })
   }
 
-  onClick() {
-
+  onClick(subject: Subject) {
+    console.log("ha entrado: "+ subject.reference)
+    this.router.navigate(["/subject/" + subject.reference + '/' + subject.name]);
+    //this.subjectPage.getData(subject);
   }
 }

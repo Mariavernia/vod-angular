@@ -1,0 +1,20 @@
+h1 {
+  font-family: 'Urbanist', sans-serif;
+  color: #ff793f;
+  align-items: center;
+}
+
+mat-label {
+  color: #f7f1e3;
+}
+
+mat-select {
+  color: #f7f1e3;
+}
+mat-form-field {
+  color: #f7f1e3;
+}
+
+a {
+  color: #f7f1e3;
+}

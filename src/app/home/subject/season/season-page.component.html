@@ -1,0 +1,17 @@
+
+<div class="grid">
+  <div *ngFor="let video of videoList">
+    <div class="">
+      <div class="p-3 h-full">
+        <div class=" p-3 h-full flex flex-column subject">
+          <div class="video" [innerHTML]="video.link | safe: 'html'"></div>
+          <br>
+          <div class="text-xl mb-2 name">{{video.name}}</div>
+          <br>
+          <div class="description">{{video.description}}</div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

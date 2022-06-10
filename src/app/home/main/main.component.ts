@@ -1,14 +1,13 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
-import {Subject} from "./subject/models/subject.model";
+import {Component, ElementRef, OnInit} from "@angular/core";
+import {Subject} from "../subject/models/subject.model";
 import {of} from "rxjs";
-import {SubjectService} from "./subject/subject.service";
+import {SubjectService} from "../subject/subject.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: 'main.component.html',
+  styleUrls: ['main.component.css']
 })
-export class HomeComponent{
+export class MainComponent implements OnInit {
 
   // @ts-ignore
   subject: Subject;
