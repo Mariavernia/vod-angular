@@ -6,13 +6,17 @@ import {catchError, map} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 import {Error} from './error.model'
+
+
 @Injectable()
 export class HttpService {
   static CONNECTION_REFUSE = 0;
   static UNAUTHORIZED = 401;
 
-  private headers: HttpHeaders = new HttpHeaders;
-  private params: HttpParams = new HttpParams;
+  // @ts-ignore
+  private headers: HttpHeaders;
+  // @ts-ignore
+  private params: HttpParams;
   private responseType: string = "";
   private successfulNotification = undefined;
   private errorNotification = undefined;
@@ -23,8 +27,12 @@ export class HttpService {
 
   post(endpoint: string, body?: object): Observable<any> {
     console.log('ENDPOINT: ', endpoint);
-
-    return  this.http.post(endpoint, body, this.createOptions())
+    return this.http
+      .post(endpoint, body, this.createOptions())
+      .pipe(
+        map(response => this.extractData(response)),
+        catchError(error => this.handleError(error))
+      );
   }
 
   get(endpoint: string): Observable<any> {
@@ -34,6 +42,17 @@ export class HttpService {
         map(response => this.extractData(response)),
         catchError(error => this.handleError(error))
       );
+  }
+
+  authBasic(email: string | undefined, password: string | undefined): HttpService {
+    return this.header('Authorization', 'Basic ' + btoa(email + ':' + password));
+  }
+
+  header(key: string, value: string): HttpService {
+    if (value != null) {
+      this.headers = this.headers.append(key, value); // This class is immutable
+    }
+    return this;
   }
 
   private resetOptions(): void {

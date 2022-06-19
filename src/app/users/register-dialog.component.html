@@ -1,59 +1,65 @@
-
 <mdb-card>
   <mdb-card-body>
     <!-- Material form register -->
-    <form >
+    <form (ngSubmit)="onSubmit()">
       <p class="h4 text-center py-4">Sign up</p>
 
       <!-- Material input text -->
       <div class="md-form">
+        <label class="font-weight-light">Name</label>
         <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
         <input
           type="text"
-          id="materialFormCardNameEx"
+          id="firstName"
           class="form-control"
           mdbInput
-          placeholder="Juan Garcia"
+          placeholder="María"
+          name="firstName"
+          [(ngModel)]="data.firstName"
         />
-        <label class="font-weight-light">Your name</label>
       </div>
 
+      <div class="md-form">
+        <label class="font-weight-light">Family-name</label>
+        <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+        <input
+          type="text"
+          id="familyName"
+          class="form-control"
+          mdbInput
+          placeholder="Garcia"
+          name="familyName"
+          [(ngModel)]="data.familyName"
+        />
+      </div>
       <!-- Material input email -->
       <div class="md-form">
+        <label class="font-weight-light">
+          Email
+        </label>
         <input
           type="email"
-          id="materialFormCardEmailEx"
+          id="email"
           class="form-control"
           mdbInput
           placeholder="example@example.es"
+          name="email"
+          [(ngModel)]="data.email"
         />
-        <label class="font-weight-light">
-          Your email
-        </label>
       </div>
 
       <!-- Material input password -->
       <div class="md-form">
+        <label class="font-weight-light">Your password</label>
         <mdb-icon fas icon="exclamation-triangle" class="prefix grey-text"></mdb-icon>
         <input
           type="password"
-          id="materialFormCardConfirmEx"
+          id="password"
           class="form-control"
           mdbInput
+          name="password"
+          [(ngModel)]="data.password"
         />
-        <label class="font-weight-light">Your password</label>
-      </div>
-
-      <!-- Material input password -->
-      <div class="md-form">
-        <mdb-icon icon="lock" class="prefix grey-text"></mdb-icon>
-        <input
-          type="password"
-          id="materialFormCardPasswordEx"
-          class="form-control"
-          mdbInput
-        />
-        <label class="font-weight-light">Repeat your password</label>
       </div>
 
       <div class="text-center py-4 mt-3">

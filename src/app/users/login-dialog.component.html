@@ -1,37 +1,41 @@
 <mdb-card>
   <mdb-card-body>
-    <!-- Material form register -->
-    <form >
+    <!-- Material form login -->
+    <form (ngSubmit)="onSubmit()">
       <p class="h4 text-center py-4">Sign up</p>
       <!-- Material input email -->
       <div class="md-form">
+        <label class="font-weight-light">
+          Email
+        </label>
         <input
           type="email"
-          id="materialFormCardEmailEx"
+          id="email"
           class="form-control"
           mdbInput
           placeholder="example@example.es"
+          name="email"
+          [(ngModel)]="data.email"
         />
-        <label class="font-weight-light">
-          Your email
-        </label>
       </div>
 
       <!-- Material input password -->
       <div class="md-form">
+        <label class="font-weight-light">Your password</label>
         <mdb-icon fas icon="exclamation-triangle" class="prefix grey-text"></mdb-icon>
         <input
-          type="email"
-          id="materialFormCardConfirmEx"
+          type="password"
+          id="password"
           class="form-control"
           mdbInput
+          name="password"
+          [(ngModel)]="data.password"
         />
-        <label class="font-weight-light">Your password</label>
       </div>
 
       <div class="text-center py-4 mt-3">
         <button mdbBtn class="waves-light" type="submit" mdbWavesEffect>
-          LOGIN
+          Login
         </button>
       </div>
     </form>

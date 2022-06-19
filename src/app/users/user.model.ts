@@ -1,9 +1,8 @@
-import {Role} from './role.model';
+import {Role} from "./role.model";
 
 export interface User {
-  firstName: string;
-  familyName: string;
-  email: string;
-  password: string;
+  token: string;
+  email?: string;
   role?: Role;
+  name?: string;
 }

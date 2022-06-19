@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {CreateSubjectDialogComponent} from "./home/subject/create/create-subject-dialog.component";
 import {CreateSeasonDialogComponent} from "./home/subject/create/create-season-dialog.component";
 import {AddVideoDialogComponent} from "./home/subject/create/add-video-dialog.component";
+import {Role} from "./users/role.model";
 
 @Component({
   selector: 'app-root',
@@ -22,28 +23,32 @@ export class AppComponent implements AfterViewInit{
   }
 
   register(): void {
-    this.dialog.open(RegisterDialogComponent)
+    this.dialog.open(RegisterDialogComponent, {
+      data: {firstName: "", familyName: "", email: "", password: "", role: Role.PROFESSOR, active: true}
+    })
   }
 
   login(): void {
-    this.dialog.open(LoginDialogComponent)
+    this.dialog.open(LoginDialogComponent, {
+      data: {email: "", password: ""}
+    })
   }
 
   createNewSubject() {
     this.dialog.open(CreateSubjectDialogComponent, {
-      data: {reference: " ",name: " ",description: " ",authorList: [" "," "," "]}
+      data: {reference: "",name: "",description: "",authorList: ["","",""]}
     })
   }
 
   createNewSeason() {
     this.dialog.open(CreateSeasonDialogComponent, {
-      data: {reference: " ", name: " ", subjectReference: " "}
+      data: {reference: "", name: "", subjectReference: ""}
     })
   }
 
   addNewVideo() {
     this.dialog.open(AddVideoDialogComponent, {
-      data: {name: " ", description: " ", link: " ", seasonReference: " "}
+      data: {name: "", description: "", link: "", seasonReference: ""}
     })
   }
 }

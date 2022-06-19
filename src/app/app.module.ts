@@ -19,7 +19,6 @@ import {CreateSubjectDialogComponent} from "./home/subject/create/create-subject
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
-import {HomeService} from "./home/home.service";
 import {HttpService} from "./core/http.service";
 import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
@@ -73,7 +72,6 @@ import {SafePipe} from "./home/subject/safe.pipe";
         MatTabsModule,
     ],
   providers: [
-    HomeService,
     HttpService,
     MessageService,
     HttpErrorHandler,

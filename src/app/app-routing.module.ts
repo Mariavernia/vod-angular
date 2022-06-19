@@ -19,8 +19,6 @@ const routes: Routes = [
       {path: 'season/:id', component: SeasonPageComponent},
     ]
   },
-  {path: 'login', component: LoginDialogComponent},
-  {path: 'register', component: RegisterDialogComponent},
 ];
 
 @NgModule({
