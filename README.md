@@ -25,3 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Estado del código
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Mariavernia_vod-angular&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Mariavernia_vod-angular)
