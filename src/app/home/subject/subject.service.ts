@@ -49,7 +49,7 @@ export class SubjectService {
       .get(EndPoints.SUBJECT+ SubjectService.SEASON + '/' + subjectReference);
   }
 
-  getAllSubjectsReferences(): Observable<String[]> {
+  getAllSubjectsReferences(): Observable<string[]> {
     return this.httpService
       .get(EndPoints.SUBJECT + SubjectService.REFERENCE);
   }

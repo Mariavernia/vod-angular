@@ -32,7 +32,6 @@ import {SeasonPageComponent} from "./home/subject/season/season-page.component";
 import {SubjectService} from "./home/subject/subject.service";
 import {VideoService} from "./home/subject/video/video.service";
 import {SeasonService} from "./home/subject/season/season.service";
-import {PruebaCompenente} from "./home/subject/prueba.compenente";
 import {MatTabsModule} from "@angular/material/tabs";
 import {SafePipe} from "./home/subject/safe.pipe";
 
@@ -48,7 +47,6 @@ import {SafePipe} from "./home/subject/safe.pipe";
     SubjectCaseComponent,
     SeasonPageComponent,
     SubjectPageComponent,
-    PruebaCompenente,
     SafePipe,
   ],
     imports: [

@@ -3,7 +3,7 @@ import {Season} from "../models/season.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {SubjectService} from "../subject.service";
 import {SeasonService} from "../season/season.service";
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {FormControl} from "@angular/forms";
 
 @Component({
@@ -14,8 +14,8 @@ export class CreateSeasonDialogComponent implements OnInit{
 
   seasons: Season[] = [];
   // @ts-ignore
-  subjectReferenceList: Observable<String[]>;
-  subjectReferences: String[]= [];
+  subjectReferenceList: Observable<string[]>;
+  subjectReferences: string[]= [];
 
   subjectControl = new FormControl();
 

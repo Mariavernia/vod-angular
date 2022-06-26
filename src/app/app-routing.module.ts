@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginDialogComponent} from "./users/login-dialog.component";
-import {RegisterDialogComponent} from "./users/register-dialog.component";
 import {SubjectPageComponent} from "./home/subject/subject-page.component";
 import {HomeComponent} from "./home/home.component";
 import {SeasonPageComponent} from "./home/subject/season/season-page.component";

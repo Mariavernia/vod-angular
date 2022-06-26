@@ -1,4 +1,4 @@
-import {Component, Inject, OnInit} from "@angular/core";
+import {Component, Inject} from "@angular/core";
 import {Video} from "../models/video.model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {SeasonService} from "../season/season.service";
@@ -14,9 +14,9 @@ import {VideoService} from "../video/video.service";
 export class AddVideoDialogComponent  {
 
   videos: Video[] = [];
-  seasonReferences: String[]= [];
+  seasonReferences: string[]= [];
   // @ts-ignore
-  seasonReferencesList: Observable<String[]>;
+  seasonReferencesList: Observable<string[]>;
   seasonControl = new FormControl();
 
 
