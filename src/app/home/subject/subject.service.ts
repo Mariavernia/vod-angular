@@ -32,6 +32,7 @@ export class SubjectService {
   }
 
   create(subject: Subject): Observable<any> {
+    console.log("SUBJECT En endpoint: " +  subject.authors[0])
     return this.http.post<Subject>(EndPoints.SUBJECT, subject, httpOptions)
       .pipe(
         catchError(this.handleError('addSubject', subject))

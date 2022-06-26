@@ -20,13 +20,13 @@ export class CreateSubjectDialogComponent {
   }
 
   onSubmit(): void {
-    this.addAuthor();
+    //this.addAuthor();
+    console.log(this.data)
     let subject0 = this.subjectService.create(this.data)
       .subscribe(subject => this.subjects.push(subject));
-    console.log('Subject: ', subject0);
     this.dialogRef.close();
   }
-
+/*
   addAuthor(): void {
     if(this.author0 != ""){
       console.log("author 1")
@@ -40,7 +40,7 @@ export class CreateSubjectDialogComponent {
       console.log("author 3")
       this.data.authors.concat(this.author2)
     }
-  }
+  }*/
 }
 
 

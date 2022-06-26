@@ -36,7 +36,7 @@ export class AppComponent implements AfterViewInit{
 
   createNewSubject() {
     this.dialog.open(CreateSubjectDialogComponent, {
-      data: {reference: "",name: "",description: "",authorList: ["","",""]}
+      data: {reference: "",name: "",description: "",authors: ["","",""]}
     })
   }
 
