@@ -3,6 +3,8 @@ div .subject {
   border-radius: 6px;
   font-family: 'Urbanist', sans-serif;
   align-items: center;
+  text-align: center;
+
 }
 #subjectTittle {
   color: #2c2c54;

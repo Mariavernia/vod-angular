@@ -52,7 +52,6 @@ export class SubjectService {
   getAllSubjectsReferences(): Observable<String[]> {
     return this.httpService
       .get(EndPoints.SUBJECT + SubjectService.REFERENCE);
-    //return of(["613000095", "613000096"]);
   }
 
 
