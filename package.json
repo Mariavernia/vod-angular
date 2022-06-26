@@ -2,7 +2,7 @@
   "name": "tfm-angular",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "ng build --prod --legacy-peer-deps",
     "build-prod": "ng build --prod",
     "start": "node server.js"
   },
