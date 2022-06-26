@@ -18,27 +18,22 @@ export class SeasonPageComponent{
   season: Season;
   videoList: Video[] = [];
   links: string[] = [];
-  //videos = of([]);
 
   constructor(private videoService:VideoService, private elementRef:ElementRef, private renderer: Renderer2) {
   }
 
   @Input()
   set data(data: Season) {
-    console.log("Ha llegado los datooos: "+data.name);
     this.season = data;
     this.getVideos();
     this.synchronizeLinks();
     for(let i = 0; i< this.videoList.length; i++){
-      //this.renderer.setAttribute(this.elementRef.nativeElement, 'class', this.videoList[i].name);
       this.elementRef.nativeElement.querySelector('.'+this.videoList[i].name)
         .insertAdjacentHTML('beforeend', this.videoList[i].link);
     }
   }
 
   getVideos() {
-    console.log("videitoosss");
-    console.log("VIDEOS SEASON REFERENCE: " + this.season.reference);
     this.videoService.getVideosBySeason(this.season.reference)
       .subscribe(items => {
         this.videoList = items;

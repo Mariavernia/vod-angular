@@ -43,10 +43,5 @@ export class SeasonService {
     console.log("PIDE LAS REFERENCIAS")
     return this.httpService
       .get(EndPoints.SUBJECT+ '/' + subjectReference + "/season");
-    /*return of([
-      {reference: "wqvewr", name:"2016/17", subjectReference:"e3cqrv"},
-      {reference: "wed", name:"2017/18", subjectReference:"e3cqrv"},
-      {reference: "wqvcwxewr", name:"2018/19", subjectReference:"e3cqrv"}
-    ])*/
   }
 }

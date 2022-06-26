@@ -29,12 +29,6 @@ export class AddVideoDialogComponent  {
   }
 
   getAllSeasonReferences() {
-    // @ts-ignore
-    this.seasonService.getAllSeasonReferences()
-      .subscribe(dataValue => {
-        this.seasonReferences = dataValue;
-      })
-
     this.seasonReferencesList =  this.seasonService.getAllSeasonReferences();
     this.seasonReferencesList
       .subscribe(dataValue => {
