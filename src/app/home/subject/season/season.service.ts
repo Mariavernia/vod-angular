@@ -34,7 +34,7 @@ export class SeasonService {
       );
   }
 
-  getAllSeasonReferences() : Observable<String[]> {
+  getAllSeasonReferences() : Observable<string[]> {
     return this.httpService
       .get(EndPoints.SEASON + SeasonService.REFERENCE);
   }

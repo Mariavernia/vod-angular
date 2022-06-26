@@ -1,6 +1,5 @@
-import {Component, ElementRef, Input, OnInit, Renderer2} from "@angular/core";
+import {Component, ElementRef, Input, Renderer2} from "@angular/core";
 import {FormControl} from "@angular/forms";
-import {Observable, of} from "rxjs";
 import {Season} from "../models/season.model";
 import {Video} from "../models/video.model";
 import {VideoService} from "../video/video.service";
