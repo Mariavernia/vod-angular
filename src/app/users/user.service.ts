@@ -43,10 +43,9 @@ export class UserService {
 
   // @ts-ignore
   login(userActive: UserRegister): Observable<User> {
-    console.log("On submit: " + userActive.email);
     return this.http
-      .post<User>(EndPoints.USER + UserService.TOKEN, userActive, httpOptions);
-      /*.pipe(
+      .post<User>(EndPoints.USER + UserService.TOKEN, userActive, httpOptions)
+      .pipe(
         map(jsonToken => {
           const jwtHelper = new JwtHelperService();
           this.user = jsonToken;
@@ -55,7 +54,7 @@ export class UserService {
           this.user.role = jwtHelper.decodeToken(jsonToken.token).role;
           return this.user;
         })
-      );*/
+      );
   }
 
   untilOperator(): boolean {
@@ -66,6 +65,7 @@ export class UserService {
   }
 
   isAuthenticated(): boolean {
+    console.log("Esta en is Authenticated" + this.user);
     return this.user != null && !(new JwtHelperService().isTokenExpired(this.user.token));
   }
 

@@ -6,6 +6,7 @@ import {CreateSubjectDialogComponent} from "./home/subject/create/create-subject
 import {CreateSeasonDialogComponent} from "./home/subject/create/create-season-dialog.component";
 import {AddVideoDialogComponent} from "./home/subject/create/add-video-dialog.component";
 import {Role} from "./users/role.model";
+import {UserService} from "./users/user.service";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import {Role} from "./users/role.model";
 })
 export class AppComponent implements AfterViewInit{
   title = 'tfm-angular';
-  constructor(private elementRef: ElementRef, private dialog: MatDialog) {
+  constructor(private elementRef: ElementRef, private dialog: MatDialog, private authService: UserService) {
   }
   username = undefined;
 
@@ -50,5 +51,9 @@ export class AppComponent implements AfterViewInit{
     this.dialog.open(AddVideoDialogComponent, {
       data: {name: "", description: "", link: "", seasonReference: ""}
     })
+  }
+
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
   }
 }

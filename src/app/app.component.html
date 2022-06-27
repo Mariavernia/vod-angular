@@ -21,21 +21,24 @@
           <a [routerLink]="['']" routerLinkActive="active" class="nav-link" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="createNewSubject()">New Subject</a>
+          <a class="nav-link" (click)="createNewSubject()" *ngIf="isAuthenticated()">New Subject</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="createNewSeason()">New Season</a>
+          <a class="nav-link" (click)="createNewSeason()" *ngIf="isAuthenticated()">New Season</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="addNewVideo()">New Video</a>
+          <a class="nav-link" (click)="addNewVideo()" *ngIf="isAuthenticated()">New Video</a>
         </li>
       </ul>
       <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item  my-2 my-sm-0">
-          <a class="nav-link" (click)="login()">SingIn</a>
+          <a class="nav-link" (click)="login()" *ngIf="!isAuthenticated()">SingIn</a>
         </li>
         <li class="nav-item  my-2 my-sm-0">
-          <a class="nav-link" (click)="register()">SingUp</a>
+          <a class="nav-link" (click)="register()" *ngIf="!isAuthenticated()">SingUp</a>
+        </li>
+        <li class="nav-item  my-2 my-sm-0">
+          <a class="nav-link" *ngIf="isAuthenticated()">LogOut</a>
         </li>
       </ul>
     </div>
